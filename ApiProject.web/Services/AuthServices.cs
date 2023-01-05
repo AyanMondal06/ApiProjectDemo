@@ -1,4 +1,5 @@
 ﻿using ApiProject.web.Insfrastructure;
+using ApiProject.web.Insfrastructure.Error;
 using ApiProject.web.Models;
 
 using Microsoft.EntityFrameworkCore;
@@ -29,13 +30,15 @@ namespace ApiProject.web.Services
             if (Company == null)
             {
                 response.Success = false;
-                response.Message = "Company not found";
+                response.Message = "Company not found!";
+                new Error(response.Message + " Company = " + CompanyName + " not present in Database");
             }
             //Password auth 
             else if (!VerifyPasswordHash(Password, Company.PasswordHash, Company.PasswordSalt))
             {
                 response.Success = false;
                 response.Message = "Wrong Password";
+                new Error(response.Message + " Company = " + CompanyName + " present in Database. But Password did not match");
             }
             else
             {
@@ -109,7 +112,7 @@ namespace ApiProject.web.Services
             SecurityTokenDescriptor tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = (DateTime.Now.AddMinutes(1)),
+                Expires = (DateTime.Now.AddMinutes(15)),
                 SigningCredentials = Creds
             };
             

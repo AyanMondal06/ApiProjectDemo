@@ -86,3 +86,5 @@ C:\Users\Ryiu\source\repos\ApiProject\ApiProject.web\bin\Debug\net6.0\Microsoft.
 C:\Users\Ryiu\source\repos\ApiProject\ApiProject.web\bin\Debug\net6.0\Scrutor.dll
 C:\Users\Ryiu\source\repos\ApiProject\ApiProject.web\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.dll
 C:\Users\Ryiu\source\repos\ApiProject\ApiProject.web\bin\Debug\net6.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+C:\Users\Ryiu\source\repos\ApiProject\ApiProject.web\bin\Debug\net6.0\ApiProject.web.xml
+C:\Users\Ryiu\source\repos\ApiProject\ApiProject.web\obj\Debug\net6.0\ApiProject.web.xml

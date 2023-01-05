@@ -2,8 +2,10 @@
 using ApiProject.web.Insfrastructure;
 using ApiProject.web.Models;
 using AutoMapper;
+using Azure.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 
 namespace ApiProject.web.Services
 {
@@ -20,7 +22,16 @@ namespace ApiProject.web.Services
         public async Task<ServiceResponse<List<GetClientDTO>>> FetchClientDataList()
         {
             var _ServiceResponse = new ServiceResponse<List<GetClientDTO>>();
-             var result = _dbInfo.ClientTable.ToList();
+            var result = (_dbInfo.ClientTable.Select(x => new
+            {
+                Email = x.Email,
+                Username = x.Username,
+                Password = x.Password,
+            })
+             .OrderBy(y => Guid.NewGuid())
+             .Take(2)
+             ).ToList();
+            
             _ServiceResponse.Data = result.Select(c => _mapper.Map<GetClientDTO>(c)).ToList();
              return _ServiceResponse;
  

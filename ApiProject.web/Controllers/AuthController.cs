@@ -1,4 +1,5 @@
 ﻿using ApiProject.web.DTOs;
+using ApiProject.web.Insfrastructure.Error;
 using ApiProject.web.Models;
 using ApiProject.web.Services;
 using Microsoft.AspNetCore.Http;
@@ -16,7 +17,10 @@ namespace ApiProject.web.Controllers
         {
             _authService = authService;
         }
-
+        /// <summary>
+        /// Method For Register
+        /// </summary>
+    
         [HttpPost("Register")]
         public async Task<ActionResult<ServiceResponse<int>>> Register(CompanyRegisterDTO request)
         {
@@ -32,11 +36,14 @@ namespace ApiProject.web.Controllers
                 );
             if (!response.Success)
             {
+                new Error(response.Message);
                 return BadRequest(response);
             }
             return Ok(response);    
         }
-
+        /// <summary>
+        /// Method To Login into System.This will add the JWT token at successfull attempt to log In
+        /// </summary>
 
         [HttpPost("Login")]
         public async Task<ActionResult<ServiceResponse<int>>> Login(CompanyLoginDTO request)

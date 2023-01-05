@@ -42,7 +42,7 @@ namespace ApiProject.web.Migrations
 
                     b.HasIndex("CompanyId");
 
-                    b.ToTable("ClientTable");
+                    b.ToTable("ClientTable", (string)null);
                 });
 
             modelBuilder.Entity("ApiProject.web.Models.Company", b =>
@@ -74,7 +74,7 @@ namespace ApiProject.web.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("CompanyTable");
+                    b.ToTable("CompanyTable", (string)null);
                 });
 
             modelBuilder.Entity("ApiProject.web.Models.ClientInfo", b =>

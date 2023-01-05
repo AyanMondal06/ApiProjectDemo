@@ -9,6 +9,8 @@ using Swashbuckle.AspNetCore.Filters;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
+var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
 
 // Add services to the container.
 // services
@@ -35,6 +37,7 @@ builder.Services.AddSwaggerGen(c =>
     });
 
     c.OperationFilter<SecurityRequirementsOperationFilter>();
+    c.IncludeXmlComments(xmlPath ,includeControllerXmlComments: true);
 });
 
 //add Jwt

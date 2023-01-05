@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ApiProject.web</name>
+    </assembly>
+    <members>
+        <member name="M:ApiProject.web.Controllers.AuthController.Register(ApiProject.web.DTOs.CompanyRegisterDTO)">
+            <summary>
+            Method For Register
+            </summary>
+        </member>
+        <member name="M:ApiProject.web.Controllers.AuthController.Login(ApiProject.web.DTOs.CompanyLoginDTO)">
+            <summary>
+            Method To Login into System.This will add the JWT token at successfull attempt to log In
+            </summary>
+        </member>
+        <member name="M:ApiProject.web.Controllers.ClientInfoController.Getall">
+            <summary>
+            This is a method for showing all the clients.Admin and Company can access this method.
+            </summary>
+        </member>
+        <member name="M:ApiProject.web.Controllers.ClientInfoController.Get(System.String)">
+            <summary>
+            This is a method for showing one company at a time.Company and Admin can access this method
+            </summary>
+        </member>
+        <member name="M:ApiProject.web.Controllers.ClientInfoController.Post(ApiProject.web.DTOs.AddClientDTO)">
+            <summary>
+            This is to add new Client in Database.Only Admin has the access.
+            </summary>
+        </member>
+        <member name="M:ApiProject.web.Controllers.ClientInfoController.Put(ApiProject.web.DTOs.UpdateClientDTO)">
+            <summary>
+            This method is used to edit existing client.Admin can only access it.
+            </summary>
+        </member>
+        <member name="M:ApiProject.web.Controllers.ClientInfoController.Delete(System.String)">
+            <summary>
+            This method is used to delete existing client.Admin can only access it.
+            </summary>
+        </member>
+        <member name="T:ApiProject.web.Migrations.init">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiProject.web.Migrations.init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiProject.web.Migrations.init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:ApiProject.web.Migrations.init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
