@@ -31,7 +31,7 @@ namespace ApiProject.web.Services
             {
                 response.Success = false;
                 response.Message = "Company not found!";
-                new Error(response.Message + " Company = " + CompanyName + " not present in Database");
+                new Error(response.Message + " Company = " + CompanyName + " is not present in Database");
             }
             //Password auth 
             else if (!VerifyPasswordHash(Password, Company.PasswordHash, Company.PasswordSalt))
